@@ -246,45 +246,7 @@ declare namespace Enum {
 		| CreatorToolMode.Scale
 		| CreatorToolMode.Paint
 		| CreatorToolMode.Brush;
-	export namespace ToolMode {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Select)
-		 */
-		export interface Select extends globalThis.EnumItem {}
-		export const Select: Select;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Move)
-		 */
-		export interface Move extends globalThis.EnumItem {}
-		export const Move: Move;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Rotate)
-		 */
-		export interface Rotate extends globalThis.EnumItem {}
-		export const Rotate: Rotate;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Scale)
-		 */
-		export interface Scale extends globalThis.EnumItem {}
-		export const Scale: Scale;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Paint)
-		 */
-		export interface Paint extends globalThis.EnumItem {}
-		export const Paint: Paint;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Brush)
-		 */
-		export interface Brush extends globalThis.EnumItem {}
-		export const Brush: Brush;
-	}
-	export type ToolMode =
-		| ToolMode.Select
-		| ToolMode.Move
-		| ToolMode.Rotate
-		| ToolMode.Scale
-		| ToolMode.Paint
-		| ToolMode.Brush;
+	export import ToolMode = CreatorToolMode;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/FontStyle/)
 	 */
@@ -453,27 +415,7 @@ declare namespace Enum {
 		export const Right: Right;
 	}
 	export type HorizontalAlignment = HorizontalAlignment.Left | HorizontalAlignment.Center | HorizontalAlignment.Right;
-	export namespace TextHorizontalAlignment {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextHorizontalAlignment#Left)
-		 */
-		export interface Left extends globalThis.EnumItem {}
-		export const Left: Left;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextHorizontalAlignment#Center)
-		 */
-		export interface Center extends globalThis.EnumItem {}
-		export const Center: Center;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextHorizontalAlignment#Right)
-		 */
-		export interface Right extends globalThis.EnumItem {}
-		export const Right: Right;
-	}
-	export type TextHorizontalAlignment =
-		| TextHorizontalAlignment.Left
-		| TextHorizontalAlignment.Center
-		| TextHorizontalAlignment.Right;
+	export import TextHorizontalAlignment = HorizontalAlignment;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/HttpRequestMethod/)
 	 */
@@ -1566,24 +1508,7 @@ declare namespace Enum {
 		export const Exact: Exact;
 	}
 	export type MeshCollisionType = MeshCollisionType.Bounds | MeshCollisionType.Convex | MeshCollisionType.Exact;
-	export namespace CollisionType {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/CollisionType#Bounds)
-		 */
-		export interface Bounds extends globalThis.EnumItem {}
-		export const Bounds: Bounds;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/CollisionType#Convex)
-		 */
-		export interface Convex extends globalThis.EnumItem {}
-		export const Convex: Convex;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/CollisionType#Exact)
-		 */
-		export interface Exact extends globalThis.EnumItem {}
-		export const Exact: Exact;
-	}
-	export type CollisionType = CollisionType.Bounds | CollisionType.Convex | CollisionType.Exact;
+	export import CollisionType = MeshCollisionType;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ParticleEmissionShape/)
 	 */
@@ -1834,69 +1759,7 @@ declare namespace Enum {
 		| PartShape.Concave
 		| PartShape.Truss
 		| PartShape.Frame;
-	export namespace Shape {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Brick)
-		 */
-		export interface Brick extends globalThis.EnumItem {}
-		export const Brick: Brick;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Sphere)
-		 */
-		export interface Sphere extends globalThis.EnumItem {}
-		export const Sphere: Sphere;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Cylinder)
-		 */
-		export interface Cylinder extends globalThis.EnumItem {}
-		export const Cylinder: Cylinder;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Cone)
-		 */
-		export interface Cone extends globalThis.EnumItem {}
-		export const Cone: Cone;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Wedge)
-		 */
-		export interface Wedge extends globalThis.EnumItem {}
-		export const Wedge: Wedge;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Corner)
-		 */
-		export interface Corner extends globalThis.EnumItem {}
-		export const Corner: Corner;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Bevel)
-		 */
-		export interface Bevel extends globalThis.EnumItem {}
-		export const Bevel: Bevel;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Concave)
-		 */
-		export interface Concave extends globalThis.EnumItem {}
-		export const Concave: Concave;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Truss)
-		 */
-		export interface Truss extends globalThis.EnumItem {}
-		export const Truss: Truss;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Frame)
-		 */
-		export interface Frame extends globalThis.EnumItem {}
-		export const Frame: Frame;
-	}
-	export type Shape =
-		| Shape.Brick
-		| Shape.Sphere
-		| Shape.Cylinder
-		| Shape.Cone
-		| Shape.Wedge
-		| Shape.Corner
-		| Shape.Bevel
-		| Shape.Concave
-		| Shape.Truss
-		| Shape.Frame;
+	export import Shape = PartShape;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/SkyboxPreset/)
 	 */
@@ -2029,135 +1892,7 @@ declare namespace Enum {
 		| SkyboxPreset.Sunset3
 		| SkyboxPreset.Sunset4
 		| SkyboxPreset.Sunset5;
-	export namespace Skybox {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day1)
-		 */
-		export interface Day1 extends globalThis.EnumItem {}
-		export const Day1: Day1;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day2)
-		 */
-		export interface Day2 extends globalThis.EnumItem {}
-		export const Day2: Day2;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day3)
-		 */
-		export interface Day3 extends globalThis.EnumItem {}
-		export const Day3: Day3;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day4)
-		 */
-		export interface Day4 extends globalThis.EnumItem {}
-		export const Day4: Day4;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day5)
-		 */
-		export interface Day5 extends globalThis.EnumItem {}
-		export const Day5: Day5;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day6)
-		 */
-		export interface Day6 extends globalThis.EnumItem {}
-		export const Day6: Day6;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day7)
-		 */
-		export interface Day7 extends globalThis.EnumItem {}
-		export const Day7: Day7;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning1)
-		 */
-		export interface Morning1 extends globalThis.EnumItem {}
-		export const Morning1: Morning1;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning2)
-		 */
-		export interface Morning2 extends globalThis.EnumItem {}
-		export const Morning2: Morning2;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning3)
-		 */
-		export interface Morning3 extends globalThis.EnumItem {}
-		export const Morning3: Morning3;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning4)
-		 */
-		export interface Morning4 extends globalThis.EnumItem {}
-		export const Morning4: Morning4;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night1)
-		 */
-		export interface Night1 extends globalThis.EnumItem {}
-		export const Night1: Night1;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night2)
-		 */
-		export interface Night2 extends globalThis.EnumItem {}
-		export const Night2: Night2;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night3)
-		 */
-		export interface Night3 extends globalThis.EnumItem {}
-		export const Night3: Night3;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night4)
-		 */
-		export interface Night4 extends globalThis.EnumItem {}
-		export const Night4: Night4;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night5)
-		 */
-		export interface Night5 extends globalThis.EnumItem {}
-		export const Night5: Night5;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset1)
-		 */
-		export interface Sunset1 extends globalThis.EnumItem {}
-		export const Sunset1: Sunset1;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset2)
-		 */
-		export interface Sunset2 extends globalThis.EnumItem {}
-		export const Sunset2: Sunset2;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset3)
-		 */
-		export interface Sunset3 extends globalThis.EnumItem {}
-		export const Sunset3: Sunset3;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset4)
-		 */
-		export interface Sunset4 extends globalThis.EnumItem {}
-		export const Sunset4: Sunset4;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset5)
-		 */
-		export interface Sunset5 extends globalThis.EnumItem {}
-		export const Sunset5: Sunset5;
-	}
-	export type Skybox =
-		| Skybox.Day1
-		| Skybox.Day2
-		| Skybox.Day3
-		| Skybox.Day4
-		| Skybox.Day5
-		| Skybox.Day6
-		| Skybox.Day7
-		| Skybox.Morning1
-		| Skybox.Morning2
-		| Skybox.Morning3
-		| Skybox.Morning4
-		| Skybox.Night1
-		| Skybox.Night2
-		| Skybox.Night3
-		| Skybox.Night4
-		| Skybox.Night5
-		| Skybox.Sunset1
-		| Skybox.Sunset2
-		| Skybox.Sunset3
-		| Skybox.Sunset4
-		| Skybox.Sunset5;
+	export import Skybox = SkyboxPreset;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextFontPreset/)
 	 */
@@ -2242,87 +1977,7 @@ declare namespace Enum {
 		| TextFontPreset.Papyrus
 		| TextFontPreset.ComicSansMS
 		| TextFontPreset.JetBrainsMono;
-	export namespace BuiltInTextFontPreset {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#SourceSans)
-		 */
-		export interface SourceSans extends globalThis.EnumItem {}
-		export const SourceSans: SourceSans;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#PressStart2P)
-		 */
-		export interface PressStart2P extends globalThis.EnumItem {}
-		export const PressStart2P: PressStart2P;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Montserrat)
-		 */
-		export interface Montserrat extends globalThis.EnumItem {}
-		export const Montserrat: Montserrat;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#RobotoMono)
-		 */
-		export interface RobotoMono extends globalThis.EnumItem {}
-		export const RobotoMono: RobotoMono;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Rubik)
-		 */
-		export interface Rubik extends globalThis.EnumItem {}
-		export const Rubik: Rubik;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Poppins)
-		 */
-		export interface Poppins extends globalThis.EnumItem {}
-		export const Poppins: Poppins;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Domine)
-		 */
-		export interface Domine extends globalThis.EnumItem {}
-		export const Domine: Domine;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Fredoka)
-		 */
-		export interface Fredoka extends globalThis.EnumItem {}
-		export const Fredoka: Fredoka;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#ComicNeue)
-		 */
-		export interface ComicNeue extends globalThis.EnumItem {}
-		export const ComicNeue: ComicNeue;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Orbitron)
-		 */
-		export interface Orbitron extends globalThis.EnumItem {}
-		export const Orbitron: Orbitron;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Papyrus)
-		 */
-		export interface Papyrus extends globalThis.EnumItem {}
-		export const Papyrus: Papyrus;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#ComicSansMS)
-		 */
-		export interface ComicSansMS extends globalThis.EnumItem {}
-		export const ComicSansMS: ComicSansMS;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#JetBrainsMono)
-		 */
-		export interface JetBrainsMono extends globalThis.EnumItem {}
-		export const JetBrainsMono: JetBrainsMono;
-	}
-	export type BuiltInTextFontPreset =
-		| BuiltInTextFontPreset.SourceSans
-		| BuiltInTextFontPreset.PressStart2P
-		| BuiltInTextFontPreset.Montserrat
-		| BuiltInTextFontPreset.RobotoMono
-		| BuiltInTextFontPreset.Rubik
-		| BuiltInTextFontPreset.Poppins
-		| BuiltInTextFontPreset.Domine
-		| BuiltInTextFontPreset.Fredoka
-		| BuiltInTextFontPreset.ComicNeue
-		| BuiltInTextFontPreset.Orbitron
-		| BuiltInTextFontPreset.Papyrus
-		| BuiltInTextFontPreset.ComicSansMS
-		| BuiltInTextFontPreset.JetBrainsMono;
+	export import BuiltInTextFontPreset = TextFontPreset;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TweenDirection/)
 	 */
@@ -2469,24 +2124,7 @@ declare namespace Enum {
 		export const ClipAndDraw: ClipAndDraw;
 	}
 	export type UIMaskMode = UIMaskMode.Disabled | UIMaskMode.ClipOnly | UIMaskMode.ClipAndDraw;
-	export namespace MaskMode {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/MaskMode#Disabled)
-		 */
-		export interface Disabled extends globalThis.EnumItem {}
-		export const Disabled: Disabled;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/MaskMode#ClipOnly)
-		 */
-		export interface ClipOnly extends globalThis.EnumItem {}
-		export const ClipOnly: ClipOnly;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/MaskMode#ClipAndDraw)
-		 */
-		export interface ClipAndDraw extends globalThis.EnumItem {}
-		export const ClipAndDraw: ClipAndDraw;
-	}
-	export type MaskMode = MaskMode.Disabled | MaskMode.ClipOnly | MaskMode.ClipAndDraw;
+	export import MaskMode = UIMaskMode;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/UIScrollMode/)
 	 */
@@ -2517,29 +2155,7 @@ declare namespace Enum {
 		| UIScrollMode.Auto
 		| UIScrollMode.AlwaysShow
 		| UIScrollMode.NeverShow;
-	export namespace ScrollMode {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#Disabled)
-		 */
-		export interface Disabled extends globalThis.EnumItem {}
-		export const Disabled: Disabled;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#Auto)
-		 */
-		export interface Auto extends globalThis.EnumItem {}
-		export const Auto: Auto;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#AlwaysShow)
-		 */
-		export interface AlwaysShow extends globalThis.EnumItem {}
-		export const AlwaysShow: AlwaysShow;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#NeverShow)
-		 */
-		export interface NeverShow extends globalThis.EnumItem {}
-		export const NeverShow: NeverShow;
-	}
-	export type ScrollMode = ScrollMode.Disabled | ScrollMode.Auto | ScrollMode.AlwaysShow | ScrollMode.NeverShow;
+	export import ScrollMode = UIScrollMode;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/VerticalAlignment/)
 	 */
@@ -2561,27 +2177,7 @@ declare namespace Enum {
 		export const Bottom: Bottom;
 	}
 	export type VerticalAlignment = VerticalAlignment.Top | VerticalAlignment.Middle | VerticalAlignment.Bottom;
-	export namespace TextVerticalAlignment {
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextVerticalAlignment#Top)
-		 */
-		export interface Top extends globalThis.EnumItem {}
-		export const Top: Top;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextVerticalAlignment#Middle)
-		 */
-		export interface Middle extends globalThis.EnumItem {}
-		export const Middle: Middle;
-		/**
-		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextVerticalAlignment#Bottom)
-		 */
-		export interface Bottom extends globalThis.EnumItem {}
-		export const Bottom: Bottom;
-	}
-	export type TextVerticalAlignment =
-		| TextVerticalAlignment.Top
-		| TextVerticalAlignment.Middle
-		| TextVerticalAlignment.Bottom;
+	export import TextVerticalAlignment = VerticalAlignment;
 }
 
 interface Accessory extends Dynamic {
@@ -2961,11 +2557,6 @@ interface BuiltInAudioAsset extends AudioAsset {
 	 * @deprecated
 	 */
 	readonly _nominal_BuiltInAudioAsset: unique symbol;
-	/**
-	 * The target audio to use
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/BuiltInAudioAsset#AudioPreset)
-	 */
-	AudioPreset: Enums["BuiltInAudioPreset"];
 }
 
 interface BuiltInFontAsset extends FontAsset {
@@ -2977,21 +2568,6 @@ interface BuiltInFontAsset extends FontAsset {
 	 * @deprecated
 	 */
 	readonly _nominal_BuiltInFontAsset: unique symbol;
-	/**
-	 * Target font to use
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/BuiltInFontAsset#FontPreset)
-	 */
-	FontPreset: Enums["BuiltInTextFontPreset"];
-	/**
-	 * Font weight for this font
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/BuiltInFontAsset#FontWeight)
-	 */
-	FontWeight: Enums["FontWeight"];
-	/**
-	 * Font style for this font
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/BuiltInFontAsset#FontStyle)
-	 */
-	FontStyle: Enums["FontStyle"];
 }
 
 interface Camera extends Dynamic {
@@ -4179,11 +3755,6 @@ interface FileLinkAsset extends BaseAsset {
 	 * @deprecated
 	 */
 	readonly _nominal_FileLinkAsset: unique symbol;
-	/**
-	 * The ID of the file
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/FileLinkAsset#LinkedID)
-	 */
-	LinkedID: string;
 }
 
 interface FilterService extends Instance {
@@ -5108,11 +4679,6 @@ interface Instance extends NetworkedObject {
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#Parent)
 	 */
 	Parent: Instance;
-	/**
-	 * Determine if children is editable, this is to be used if this instance is a Linked model. Only used in creator.
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#EditableChildren)
-	 */
-	EditableChildren: boolean;
 	/**
 	 * Tags associated with this instance.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#Tags)
@@ -6552,11 +6118,6 @@ interface PlayerDefaults extends HiddenBase {
 	 */
 	UseStamina: boolean;
 	/**
-	 * Legacy value for stamina.
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PlayerDefaults#StaminaEnabled)
-	 */
-	StaminaEnabled: boolean;
-	/**
 	 * Determines the default stamina of players.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PlayerDefaults#Stamina)
 	 */
@@ -6909,11 +6470,6 @@ interface PTAudioAsset extends AudioAsset {
 	 * @deprecated
 	 */
 	readonly _nominal_PTAudioAsset: unique symbol;
-	/**
-	 * The audio ID to load
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PTAudioAsset#AudioID)
-	 */
-	AudioID: number;
 }
 
 interface PTCallback {
@@ -6968,11 +6524,6 @@ interface PTMeshAsset extends MeshAsset {
 	 * @deprecated
 	 */
 	readonly _nominal_PTMeshAsset: unique symbol;
-	/**
-	 * Asset ID of this mesh
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PTMeshAsset#AssetID)
-	 */
-	AssetID: number;
 }
 
 interface PTSignal {
@@ -7224,16 +6775,6 @@ interface Script extends Instance {
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Script#IsEnabled)
 	 */
 	IsEnabled: boolean;
-	/**
-	 * A linked script asset associated with this script.
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Script#LinkedScript)
-	 */
-	LinkedScript: FileLinkAsset;
-	/**
-	 * Indicates whether the script is running in compatibility mode.
-	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Script#Compatibility)
-	 */
-	Compatibility: boolean;
 	/**
 	 * Calls a function in the script with the given arguments.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Script#Call)

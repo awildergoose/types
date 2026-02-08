@@ -51,34 +51,34 @@ export class CodeEmitter {
 		return "\t".repeat(n);
 	}
 
-	emitDocumentationFor(obj: { Description: string }, docs: string, indent: number) {
+	emitDocumentationFor(obj: { Description: string }, docs: string, indent: number, attributes?: Array<string>) {
 		this.emit(`${this.indentStr(indent)}/**`);
 		let fields = [`[Documentation](${docs})`];
 		if (obj.Description !== "") fields = [obj.Description, ...fields];
+		fields = [...fields, ...(attributes ?? [])];
 		fields.forEach(field => this.emit(`${this.indentStr(indent)} * ${field}`));
 		this.emit(`${this.indentStr(indent)} */`);
 	}
 
 	emitEnum(enm: IREnum) {
-		this.emit(`\t/**`);
-		let fields = [`[Documentation](${CodeEmitter.getEnumDocsUrl(enm.Name)})`];
-		if (enm.Description !== "") fields = [enm.Description, "", ...fields];
-		fields.forEach(field => this.emit(`\t * ${field}`));
-		this.emit(`\t */`);
+		this.emitDocumentationFor(enm, CodeEmitter.getEnumDocsUrl(enm.Name), 1);
 
-		const names = [enm.Name];
+		const baseName = enm.Name;
 		const internalName = enm.InternalName.split("Enum")[0];
-		if (enm.Name !== internalName) names.push(internalName);
-		for (const name of names) {
-			this.emit(`\texport namespace ${name} {`);
-			enm.Options.forEach(prop => {
-				this.emitDocumentationFor(enm, CodeEmitter.getEnumMemberDocsUrl(name, prop.Name), 2);
-				this.emit(`\t\texport interface ${prop.Name} extends globalThis.EnumItem {}`);
-				this.emit(`\t\texport const ${prop.Name}: ${prop.Name};`);
-			});
-			this.emit(`\t}`);
 
-			this.emit(`\texport type ${name} = ${enm.Options.map(option => `${name}.${option.Name}`).join(" | ")};`);
+		this.emit(`\texport namespace ${baseName} {`);
+		enm.Options.forEach(prop => {
+			this.emitDocumentationFor(prop, CodeEmitter.getEnumMemberDocsUrl(baseName, prop.Name), 2);
+			this.emit(`\t\texport interface ${prop.Name} extends globalThis.EnumItem {}`);
+			this.emit(`\t\texport const ${prop.Name}: ${prop.Name};`);
+		});
+		this.emit(`\t}`);
+
+		this.emit(
+			`\texport type ${baseName} = ${enm.Options.map(option => `${baseName}.${option.Name}`).join(" | ")};`,
+		);
+		if (enm.Name !== internalName) {
+			this.emit(`\texport import ${internalName} = ${baseName};`);
 		}
 	}
 
@@ -100,7 +100,13 @@ export class CodeEmitter {
 		});
 
 		type.Properties.forEach(prop => {
-			this.emitDocumentationFor(prop, CodeEmitter.getTypeMemberDocsUrl(type.Name, prop.Name), 1);
+			if (!prop.IsAccessibleByScripts) return;
+			this.emitDocumentationFor(
+				prop,
+				CodeEmitter.getTypeMemberDocsUrl(type.Name, prop.Name),
+				1,
+				prop.IsObsolete ? ["@deprecated"] : [],
+			);
 			this.emit(`\t${prop.IsReadOnly ? "readonly " : ""}${prop.Name}: ${CodeEmitter.resolveType(prop.Type)};`);
 		});
 
@@ -114,9 +120,9 @@ export class CodeEmitter {
 				},
 				...method.Parameters,
 			];
-			const parameters = parameterList.map(
-				p => `${p.Name}: ${CodeEmitter.resolveType(p.Type)}${p.IsOptional ? " | undefined" : ""}`,
-			);
+			const parameters = parameterList
+				.map(p => `${p.Name}: ${CodeEmitter.resolveType(p.Type)}${p.IsOptional ? " | undefined" : ""}`)
+				.join(", ");
 			const returnType =
 				method.ReturnType && method.ReturnType !== "nil" ? CodeEmitter.resolveType(method.ReturnType) : "void";
 			this.emitDocumentationFor(method, CodeEmitter.getTypeMemberDocsUrl(type.Name, method.Name), 1);
