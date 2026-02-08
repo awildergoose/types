@@ -1,4 +1,5 @@
 /// <reference path="lua.d.ts" />
+/// <reference types="@rbxts/compiler-types" />
 // Auto-generated typedefs for polytoria!
 type Enums = typeof Enum;
 
@@ -9,6 +10,48 @@ interface Event<T extends Callback = Callback> {
 	Connect(this: Event, callback: T): void;
 	Disconnect(this: Event, callback: T): void;
 }
+
+declare const SharedTableNominal: unique symbol;
+type SharedTableValue = boolean | number | Vector3 | string | SharedTable | Instance | typeof SharedTableNominal;
+
+// SharedTable
+interface SharedTable {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_SharedTable: typeof SharedTableNominal;
+	[K: string | number]: SharedTableValue;
+}
+
+// type
+interface CheckablePrimitives {
+	nil: undefined;
+	boolean: boolean;
+	string: string;
+	number: number;
+	table: object;
+	userdata: unknown;
+	function: Callback;
+	thread: thread;
+	vector: Vector3;
+	// buffer: buffer;
+}
+
+/**
+ * Returns the type of its only argument, coded as a string.
+ * Roblox datatypes will return "userdata" when passed to this function. You should use Roblox's typeOf() function if you want to differentiate between Roblox datatypes.
+ */
+declare function type(value: unknown): keyof CheckablePrimitives;
+
+/** The strings which can be returned by typeOf and their corresponding types */
+interface CheckableTypes extends CheckablePrimitives {}
+
+declare const game: Game;
+declare const script: Script;
 
 declare namespace Enum {
 	/**
@@ -2708,22 +2751,12 @@ interface Camera extends Dynamic {
 	 * Cast a ray from the camera at the specified ViewportPoint (Vector3 with components with values in range of 0 - 1 describing how far a point is to to right and to the top of the screen) into the game world
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Camera#ViewportPointToRay)
 	 */
-	ViewportPointToRay(
-		this: Camera,
-		pos: Vector2,
-		ignoreList: Array<Instance> | undefined,
-		maxDistance: number | undefined,
-	): RayResult;
+	ViewportPointToRay(this: Camera, pos: Vector2, ignoreList?: Array<Instance>, maxDistance?: number): RayResult;
 	/**
 	 * Cast a ray from the camera at screen point into the game world
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Camera#ScreenPointToRay)
 	 */
-	ScreenPointToRay(
-		this: Camera,
-		pos: Vector2,
-		ignoreList: Array<Instance> | undefined,
-		maxDistance: number | undefined,
-	): RayResult;
+	ScreenPointToRay(this: Camera, pos: Vector2, ignoreList?: Array<Instance>, maxDistance?: number): RayResult;
 	/**
 	 * Transforms `pos` from viewport space into screen space.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Camera#ViewportToScreenPoint)
@@ -2789,23 +2822,12 @@ interface CaptureService extends Instance {
 	 * Take a photo at dynamic
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/CaptureService#TakePhotoAtDynamic)
 	 */
-	TakePhotoAtDynamic(
-		this: CaptureService,
-		dyn: Dynamic,
-		photoSize: Vector2 | undefined,
-		overlay: UIField | undefined,
-	): void;
+	TakePhotoAtDynamic(this: CaptureService, dyn: Dynamic, photoSize?: Vector2, overlay?: UIField): void;
 	/**
 	 * Take photo at `pos` for position and `rot` for rotation, optional `photoSize` defines the size, and optional UI `overlay` can be passed to include it in the result photo.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/CaptureService#TakePhotoAt)
 	 */
-	TakePhotoAt(
-		this: CaptureService,
-		pos: Vector3,
-		rot: Vector3,
-		photoSize: Vector2 | undefined,
-		overlay: UIField | undefined,
-	): void;
+	TakePhotoAt(this: CaptureService, pos: Vector3, rot: Vector3, photoSize?: Vector2, overlay?: UIField): void;
 }
 
 interface CharacterModel extends Dynamic {
@@ -3590,27 +3612,27 @@ interface Entity extends Physical {
 	 * Applies a force to the entity.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Entity#AddForce)
 	 */
-	AddForce(this: Entity, force: Vector3, mode: Enums["ForceMode"] | undefined): void;
+	AddForce(this: Entity, force: Vector3, mode?: Enums["ForceMode"]): void;
 	/**
 	 * Applies a rotational force to the entity.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Entity#AddTorque)
 	 */
-	AddTorque(this: Entity, force: Vector3, mode: Enums["ForceMode"] | undefined): void;
+	AddTorque(this: Entity, force: Vector3, mode?: Enums["ForceMode"]): void;
 	/**
 	 * Applies a force to the entity from a specific position.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Entity#AddForceAtPosition)
 	 */
-	AddForceAtPosition(this: Entity, force: Vector3, position: Vector3, mode: Enums["ForceMode"] | undefined): void;
+	AddForceAtPosition(this: Entity, force: Vector3, position: Vector3, mode?: Enums["ForceMode"]): void;
 	/**
 	 * Adds a force to the part relative to its own rotation.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Entity#AddRelativeForce)
 	 */
-	AddRelativeForce(this: Entity, force: Vector3, mode: Enums["ForceMode"] | undefined): void;
+	AddRelativeForce(this: Entity, force: Vector3, mode?: Enums["ForceMode"]): void;
 	/**
 	 * Adds a rotational force to the part relative to its own rotation.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Entity#AddRelativeTorque)
 	 */
-	AddRelativeTorque(this: Entity, torque: Vector3, mode: Enums["ForceMode"] | undefined): void;
+	AddRelativeTorque(this: Entity, torque: Vector3, mode?: Enums["ForceMode"]): void;
 }
 
 interface Environment extends Instance {
@@ -3650,8 +3672,8 @@ interface Environment extends Instance {
 		this: Environment,
 		origin: Vector3,
 		direction: Vector3,
-		maxDistance: number | undefined,
-		ignoreList: Array<Instance> | undefined,
+		maxDistance?: number,
+		ignoreList?: Array<Instance>,
 	): RayResult;
 	/**
 	 * Casts a ray from origin with a specified direction and returns a RayResult array for all hit objects.
@@ -3661,19 +3683,14 @@ interface Environment extends Instance {
 		this: Environment,
 		origin: Vector3,
 		direction: Vector3,
-		maxDistance: number | undefined,
-		ignoreList: Array<Instance> | undefined,
+		maxDistance?: number,
+		ignoreList?: Array<Instance>,
 	): Array<RayResult>;
 	/**
 	 * Returns a list of instances intersecting with the sphere in the given position and radius.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Environment#OverlapSphere)
 	 */
-	OverlapSphere(
-		this: Environment,
-		origin: Vector3,
-		radius: number,
-		ignoreList: Array<Instance> | undefined,
-	): Array<Instance>;
+	OverlapSphere(this: Environment, origin: Vector3, radius: number, ignoreList?: Array<Instance>): Array<Instance>;
 	/**
 	 * Returns a list of instances intersecting with the box in the given position, size and rotation.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Environment#OverlapBox)
@@ -3683,7 +3700,7 @@ interface Environment extends Instance {
 		pos: Vector3,
 		size: Vector3,
 		rot: Vector3,
-		ignoreList: Array<Instance> | undefined,
+		ignoreList?: Array<Instance>,
 	): Array<Instance>;
 	/**
 	 * Rebuilds the navigation mesh which determines the empty space where NPCs can pathfind in.
@@ -4181,52 +4198,52 @@ interface HttpService extends Instance {
 	 * Sends a GET request to the specified URL.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#GetAsync)
 	 */
-	GetAsync(this: HttpService, url: string, headers: any | undefined): string;
+	GetAsync(this: HttpService, url: string, headers?: any): string;
 	/**
 	 * Sends a POST request to the specified URL.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#PostAsync)
 	 */
-	PostAsync(this: HttpService, url: string, body: string, headers: any | undefined): string;
+	PostAsync(this: HttpService, url: string, body: string, headers?: any): string;
 	/**
 	 * Sends a PUT request to the specified URL.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#PutAsync)
 	 */
-	PutAsync(this: HttpService, url: string, body: string, headers: any | undefined): string;
+	PutAsync(this: HttpService, url: string, body: string, headers?: any): string;
 	/**
 	 * Sends a DELETE request to the specified url.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#DeleteAsync)
 	 */
-	DeleteAsync(this: HttpService, url: string, body: string, headers: any | undefined): string;
+	DeleteAsync(this: HttpService, url: string, body: string, headers?: any): string;
 	/**
 	 * Sends a PATCH request to the specified url.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#PatchAsync)
 	 */
-	PatchAsync(this: HttpService, url: string, body: string, headers: any | undefined): string;
+	PatchAsync(this: HttpService, url: string, body: string, headers?: any): string;
 	/**
 	 * Sends a GET request to the specified url, and return the response as buffer.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#GetBufferAsync)
 	 */
-	GetBufferAsync(this: HttpService, url: string, headers: any | undefined): any;
+	GetBufferAsync(this: HttpService, url: string, headers?: any): any;
 	/**
 	 * Sends a POST request to the specified url, and return the response as buffer.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#PostBufferAsync)
 	 */
-	PostBufferAsync(this: HttpService, url: string, body: string, headers: any | undefined): any;
+	PostBufferAsync(this: HttpService, url: string, body: string, headers?: any): any;
 	/**
 	 * Sends a PUT request to the specified url, and return the response as buffer.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#PutBufferAsync)
 	 */
-	PutBufferAsync(this: HttpService, url: string, body: string, headers: any | undefined): any;
+	PutBufferAsync(this: HttpService, url: string, body: string, headers?: any): any;
 	/**
 	 * Sends a DELETE request to the specified url, and return the response as buffer.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#DeleteBufferAsync)
 	 */
-	DeleteBufferAsync(this: HttpService, url: string, body: string, headers: any | undefined): any;
+	DeleteBufferAsync(this: HttpService, url: string, body: string, headers?: any): any;
 	/**
 	 * Sends a PATCH request to the specified url, and return the response as buffer.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/HttpService#PatchBufferAsync)
 	 */
-	PatchBufferAsync(this: HttpService, url: string, body: string, headers: any | undefined): any;
+	PatchBufferAsync(this: HttpService, url: string, body: string, headers?: any): any;
 }
 
 interface Image3D extends Dynamic {
@@ -4586,7 +4603,7 @@ interface InputService extends Instance {
 	 * Returns the 3D world-space position corresponding to the current mouse cursor location.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/InputService#GetMouseWorldPosition)
 	 */
-	GetMouseWorldPosition(this: InputService, ignoreList: Array<Instance> | undefined): Vector3;
+	GetMouseWorldPosition(this: InputService, ignoreList?: Array<Instance>): Vector3;
 	/**
 	 * Returns the current Vector2 value of the action.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/InputService#GetVector2)
@@ -4703,7 +4720,7 @@ interface Instance extends NetworkedObject {
 	 * Wait for children to be added.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#WaitChild)
 	 */
-	WaitChild(this: Instance, name: string, timeoutSec: number | undefined): Instance;
+	WaitChild(this: Instance, name: string, timeoutSec?: number): Instance;
 	/**
 	 * Finds a child of this instance by class name.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#FindChildByClass)
@@ -4763,7 +4780,7 @@ interface Instance extends NetworkedObject {
 	 * Creates a new instance of the specified class.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#New)
 	 */
-	New(this: Instance, className: string, parent: Instance | undefined): Instance;
+	New(this: Instance, className: string, parent?: Instance): Instance;
 	/**
 	 * Adds a tag to this instance.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Instance#AddTag)
@@ -5062,12 +5079,12 @@ interface Mesh extends Entity {
 	 * Plays the specified animation on the mesh.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Mesh#PlayAnimation)
 	 */
-	PlayAnimation(this: Mesh, animationName: string, speed: number | undefined, loop: boolean | undefined): void;
+	PlayAnimation(this: Mesh, animationName: string, speed?: number, loop?: boolean): void;
 	/**
 	 * Stops the specified animation on the mesh.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Mesh#StopAnimation)
 	 */
-	StopAnimation(this: Mesh, animationName: string | undefined): void;
+	StopAnimation(this: Mesh, animationName?: string): void;
 	/**
 	 * Gets a list of all animations available on the mesh.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Mesh#GetAnimations)
@@ -5324,17 +5341,17 @@ interface NetworkedObject {
 	 * Clones the instance
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NetworkedObject#Clone)
 	 */
-	Clone(this: NetworkedObject, parent: NetworkedObject | undefined): NetworkedObject;
+	Clone(this: NetworkedObject, parent?: NetworkedObject): NetworkedObject;
 	/**
 	 * Destroys the instance (same as Delete method)
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NetworkedObject#Destroy)
 	 */
-	Destroy(this: NetworkedObject, time: number | undefined): void;
+	Destroy(this: NetworkedObject, time?: number): void;
 	/**
 	 * Deletes the instance (same as Destroy method)
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NetworkedObject#Delete)
 	 */
-	Delete(this: NetworkedObject, time: number | undefined): void;
+	Delete(this: NetworkedObject, time?: number): void;
 }
 
 interface NetworkEvent extends Instance {
@@ -5365,17 +5382,17 @@ interface NetworkEvent extends Instance {
 	 * Sends a message to the server.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NetworkEvent#InvokeServer)
 	 */
-	InvokeServer(this: NetworkEvent, msg: NetMessage | undefined, _: any | undefined): void;
+	InvokeServer(this: NetworkEvent, msg?: NetMessage, _?: any): void;
 	/**
 	 * Sends a message to a specific client.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NetworkEvent#InvokeClient)
 	 */
-	InvokeClient(this: NetworkEvent, msg: NetMessage | undefined, player: Player | undefined): void;
+	InvokeClient(this: NetworkEvent, msg?: NetMessage, player?: Player): void;
 	/**
 	 * Sends a message to all connected clients.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NetworkEvent#InvokeClients)
 	 */
-	InvokeClients(this: NetworkEvent, msg: NetMessage | undefined): void;
+	InvokeClients(this: NetworkEvent, msg?: NetMessage): void;
 }
 
 interface NewServerRequestData {
@@ -5552,7 +5569,7 @@ interface NPC extends Physical {
 	 * Unsits the NPC from the current seat.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NPC#Unsit)
 	 */
-	Unsit(this: NPC, addForce: boolean | undefined): void;
+	Unsit(this: NPC, addForce?: boolean): void;
 	/**
 	 * Equips the NPC with a specified tool.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/NPC#EquipTool)
@@ -6320,7 +6337,7 @@ interface PolytorianModel extends CharacterModel {
 	 * Start ragdoll
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PolytorianModel#StartRagdoll)
 	 */
-	StartRagdoll(this: PolytorianModel, force: Vector3 | undefined): void;
+	StartRagdoll(this: PolytorianModel, force?: Vector3): void;
 	/**
 	 * Stop ragdoll
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PolytorianModel#StopRagdoll)
@@ -6335,7 +6352,7 @@ interface PolytorianModel extends CharacterModel {
 	 * Load an appearance.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PolytorianModel#LoadAppearance)
 	 */
-	LoadAppearance(this: PolytorianModel, userID: number, loadTool: boolean | undefined): void;
+	LoadAppearance(this: PolytorianModel, userID: number, loadTool?: boolean): void;
 	/**
 	 * Clear current appearance.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/PolytorianModel#ClearAppearance)
@@ -6992,7 +7009,7 @@ interface Sound extends Dynamic {
 	 * Plays the sound once at the specified volume without affecting the current playback.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Sound#PlayOneShot)
 	 */
-	PlayOneShot(this: Sound, volume: number | undefined): void;
+	PlayOneShot(this: Sound, volume?: number): void;
 	/**
 	 * Pause the sound if it is currently playing.
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/Sound#Pause)
@@ -7325,7 +7342,7 @@ interface TweenObject {
 	 * Cancel this tween
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/types/TweenObject#Cancel)
 	 */
-	Cancel(this: TweenObject, callFinsihed: boolean | undefined): void;
+	Cancel(this: TweenObject, callFinsihed?: boolean): void;
 }
 
 interface TweenService extends Instance {

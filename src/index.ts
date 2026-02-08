@@ -33,6 +33,7 @@ start = Bun.nanoseconds();
 
 const emitter = new CodeEmitter();
 emitter.emit(`/// <reference path="lua.d.ts" />
+/// <reference types="@rbxts/compiler-types" />
 // Auto-generated typedefs for polytoria!
 type Enums = typeof Enum;
 
@@ -43,7 +44,54 @@ interface Event<T extends Callback = Callback> {
 	Connect(this: Event, callback: T): void;
 	Disconnect(this: Event, callback: T): void;
 }
+
+declare const SharedTableNominal: unique symbol;
+type SharedTableValue = boolean | number | Vector3 | string | SharedTable | Instance | typeof SharedTableNominal;
+
+// SharedTable
+interface SharedTable {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_SharedTable: typeof SharedTableNominal;
+	[K: string | number]: SharedTableValue;
+}
+
+// type
+interface CheckablePrimitives {
+	nil: undefined;
+	boolean: boolean;
+	string: string;
+	number: number;
+	table: object;
+	userdata: unknown;
+	function: Callback;
+	thread: thread;
+	vector: Vector3;
+	// buffer: buffer;
+}
+
+/**
+ * Returns the type of its only argument, coded as a string.
+ * Roblox datatypes will return "userdata" when passed to this function. You should use Roblox's typeOf() function if you want to differentiate between Roblox datatypes.
+ */
+declare function type(value: unknown): keyof CheckablePrimitives;
+
+/** The strings which can be returned by typeOf and their corresponding types */
+interface CheckableTypes extends CheckablePrimitives {
+
+}
+
+declare const game: Game;
+declare const script: Script;
+
 `);
+
+// TODO Instances type (`ClassName`s)
 
 emitter.emit("declare namespace Enum {");
 for (const enm of fullIR.enums) emitter.emitEnum(enm);

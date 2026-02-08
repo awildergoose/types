@@ -121,7 +121,7 @@ export class CodeEmitter {
 				...method.Parameters,
 			];
 			const parameters = parameterList
-				.map(p => `${p.Name}: ${CodeEmitter.resolveType(p.Type)}${p.IsOptional ? " | undefined" : ""}`)
+				.map(p => `${p.Name}${p.IsOptional ? "?" : ""}: ${CodeEmitter.resolveType(p.Type)}`)
 				.join(", ");
 			const returnType =
 				method.ReturnType && method.ReturnType !== "nil" ? CodeEmitter.resolveType(method.ReturnType) : "void";
