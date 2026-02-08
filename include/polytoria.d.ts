@@ -50,9 +50,42 @@ declare function type(value: unknown): keyof CheckablePrimitives;
 /** The strings which can be returned by typeOf and their corresponding types */
 interface CheckableTypes extends CheckablePrimitives {}
 
-declare const game: Game;
 declare const script: Script;
-
+declare const Achievements: AchievementsService;
+declare const Assets: AssetsService;
+declare const Capture: CaptureService;
+declare const Chat: ChatService;
+declare const CoreUI: CoreUIService;
+declare const Addons: CreatorAddons;
+declare const CreatorContext: CreatorContextService;
+declare const CreatorGUI: CreatorGUI;
+declare const History: CreatorHistory;
+declare const Selections: CreatorSelections;
+declare const Creator: CreatorService;
+declare const Datastore: DatastoreService;
+declare const Environment: Environment;
+declare const Filter: FilterService;
+declare const game: Game;
+declare const Hidden: Hidden;
+declare const Http: HttpService;
+declare const Input: InputService;
+declare const Insert: InsertService;
+declare const Inventory: Inventory;
+declare const IO: IOService;
+declare const Lighting: Lighting;
+declare const Places: PlacesService;
+declare const PlayerDefaults: PlayerDefaults;
+declare const PlayerGUI: PlayerGUI;
+declare const Players: Players;
+declare const Preferences: PreferencesService;
+declare const Presence: PresenceService;
+declare const Purchases: PurchasesService;
+declare const ScriptService: ScriptService;
+declare const ServerHidden: ServerHidden;
+declare const Social: SocialService;
+declare const SunLight: SunLight;
+declare const Temporary: Temporary;
+declare const Tween: TweenService;
 declare namespace Enum {
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/AddonPermission/)

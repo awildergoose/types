@@ -86,10 +86,13 @@ interface CheckableTypes extends CheckablePrimitives {
 
 }
 
-declare const game: Game;
-declare const script: Script;
+declare const script: Script;`);
 
-`);
+for (const type of fullIR.types) {
+	let varname = type.StaticAlias || type.Name;
+	if (type.Name === "CreatorGUI") varname = "CreatorGUI";
+	if (type.IsStatic) emitter.emit(`declare const ${varname}: ${type.Name};`);
+}
 
 // TODO Instances type (`ClassName`s)
 
