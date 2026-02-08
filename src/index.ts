@@ -38,6 +38,11 @@ type Enums = typeof Enum;
 
 interface EnumItem {}
 interface Enum {}
+
+interface Event<T extends Callback = Callback> {
+	Connect(this: Event, callback: T): void;
+	Disconnect(this: Event, callback: T): void;
+}
 `);
 
 emitter.emit("declare namespace Enum {");
