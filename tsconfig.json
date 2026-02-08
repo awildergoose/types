@@ -3,10 +3,10 @@
 		// required
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
-		"module": "commonjs",
+        "module": "preserve",
 		"noLib": false,
 		"strict": true,
-		"target": "es6",
+        "target": "esnext",
 		"strictNullChecks": true,
 		"esModuleInterop": true,
 		// required, configurable

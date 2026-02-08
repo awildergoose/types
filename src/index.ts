@@ -1,53 +1,52 @@
-import assert from "assert";
-import fs from "fs/promises";
-import path from "path";
-import ts from "typescript";
+import { readdir } from "node:fs/promises";
 
-import { GENERATED_FOLDER_PATH } from "./constants";
-import { SecurityLevel } from "./enums";
-import { createEnumsSourceFile } from "./generator/enums/createEnumsSourceFile";
-import { createApiSourceFile } from "./generator/instances/createApiSourceFile";
-import { ApiDocs, ApiDocsEntry } from "./types/ApiDocs";
-import { ApiDump } from "./types/ApiDump";
-import { Context } from "./types/Context";
+import { YAML } from "bun";
 
-const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
+import { type IR, IREnumSchema, IRSchema, IRTypeSchema } from "./ir";
+import { CodeEmitter } from "./code_emitter";
 
-async function generateEnumsDts(ctx: Context) {
-	const sourceFile = createEnumsSourceFile(ctx);
-	const contents = printer.printFile(sourceFile);
-	await fs.writeFile(path.join(GENERATED_FOLDER_PATH, "enums.d.ts"), contents);
+const ROOT = `${__dirname}/../docs-site/yaml`;
+const ENUMS = `${ROOT}/enums`;
+const TYPES = `${ROOT}/types`;
+
+const ir: IR = { enums: [], types: [] };
+
+let start = Bun.nanoseconds();
+
+const enumFiles = await readdir(`${ENUMS}`, { recursive: true });
+for (const file of enumFiles) {
+	const text = await Bun.file(`${ENUMS}/${file}`).text();
+	const parsed = IREnumSchema.parse(YAML.parse(text));
+	ir.enums.push(parsed);
 }
 
-async function generateApiDts(ctx: Context, securityLevel: SecurityLevel) {
-	const sourceFile = createApiSourceFile(ctx, securityLevel);
-	const contents = printer.printFile(sourceFile);
-	await fs.writeFile(path.join(GENERATED_FOLDER_PATH, `${SecurityLevel[securityLevel]}.d.ts`), contents);
+const typeFiles = await readdir(`${TYPES}`, { recursive: true });
+for (const file of typeFiles) {
+	const text = await Bun.file(`${TYPES}/${file}`).text();
+	const parsed = IRTypeSchema.parse(YAML.parse(text));
+	ir.types.push(parsed);
 }
 
-const ROBLOX_CLIENT_TRACKER_URL_BASE =
-	"https://raw.githubusercontent.com/MaximumADHD/Roblox-Client-Tracker/refs/heads/roblox";
-const API_DUMP_URL = `${ROBLOX_CLIENT_TRACKER_URL_BASE}/Mini-API-Dump.json`;
-const API_DOCS_URL = `${ROBLOX_CLIENT_TRACKER_URL_BASE}/api-docs/mini/en-us.json`;
+const fullIR = IRSchema.parse(ir);
+console.log(`Parsed IR in ${((Bun.nanoseconds() - start) / 1e9).toFixed(3)}s!`);
+start = Bun.nanoseconds();
 
-async function main() {
-	const apiDumpResponse = await fetch(API_DUMP_URL);
-	assert(apiDumpResponse.ok, "Failed to fetch API dump");
-	const apiDump = (await apiDumpResponse.json()) as ApiDump;
+const emitter = new CodeEmitter();
+emitter.emit(`// Auto-generated typedefs for polytoria!
+type Enums = typeof Enum;
 
-	const apiDocsResponse = await fetch(API_DOCS_URL);
-	assert(apiDocsResponse.ok, "Failed to fetch API docs");
-	const apiDocs = (await apiDocsResponse.json()) as ApiDocs;
+interface EnumItem {}
+interface Enum {}
+`);
 
-	const docs = new Map<string, ApiDocsEntry>(Object.entries(apiDocs));
+emitter.emit("declare namespace Enum {");
+for (const enm of fullIR.enums) emitter.emitEnum(enm);
+emitter.emit("}");
 
-	const superClassMap = new Map<string, string>(apiDump.Classes.map(v => [v.Name, v.Superclass]));
+emitter.emit();
 
-	const ctx: Context = { apiDump, docs, superClassMap };
+for (const type of fullIR.types) emitter.emitType(type);
 
-	await generateApiDts(ctx, SecurityLevel.None);
-	await generateApiDts(ctx, SecurityLevel.PluginSecurity);
-	await generateEnumsDts(ctx);
-}
+console.log(`Emitted code in ${((Bun.nanoseconds() - start) / 1e9).toFixed(3)}s!`);
 
-void main();
+await Bun.file("include/polytoria.d.ts").write(emitter.text);

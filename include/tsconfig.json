@@ -3,7 +3,7 @@
 		// required
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
-		"module": "commonjs",
+        "module": "preserve",
 		"noLib": true,
 		"strict": true,
 		"target": "esnext",
