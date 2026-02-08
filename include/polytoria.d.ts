@@ -43,7 +43,7 @@ interface CheckablePrimitives {
 
 /**
  * Returns the type of its only argument, coded as a string.
- * Roblox datatypes will return "userdata" when passed to this function. You should use Roblox's typeOf() function if you want to differentiate between Roblox datatypes.
+ * Polytoria datatypes will return "userdata" when passed to this function. You should use Polytoria's typeOf() function if you want to differentiate between Polytoria datatypes.
  */
 declare function type(value: unknown): keyof CheckablePrimitives;
 
