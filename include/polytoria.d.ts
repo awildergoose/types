@@ -1,3 +1,4 @@
+/// <reference path="lua.d.ts" />
 // Auto-generated typedefs for polytoria!
 type Enums = typeof Enum;
 
@@ -240,6 +241,45 @@ declare namespace Enum {
 		| CreatorToolMode.Scale
 		| CreatorToolMode.Paint
 		| CreatorToolMode.Brush;
+	export namespace ToolMode {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Select)
+		 */
+		export interface Select extends globalThis.EnumItem {}
+		export const Select: Select;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Move)
+		 */
+		export interface Move extends globalThis.EnumItem {}
+		export const Move: Move;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Rotate)
+		 */
+		export interface Rotate extends globalThis.EnumItem {}
+		export const Rotate: Rotate;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Scale)
+		 */
+		export interface Scale extends globalThis.EnumItem {}
+		export const Scale: Scale;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Paint)
+		 */
+		export interface Paint extends globalThis.EnumItem {}
+		export const Paint: Paint;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ToolMode#Brush)
+		 */
+		export interface Brush extends globalThis.EnumItem {}
+		export const Brush: Brush;
+	}
+	export type ToolMode =
+		| ToolMode.Select
+		| ToolMode.Move
+		| ToolMode.Rotate
+		| ToolMode.Scale
+		| ToolMode.Paint
+		| ToolMode.Brush;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/FontStyle/)
 	 */
@@ -408,6 +448,27 @@ declare namespace Enum {
 		export const Right: Right;
 	}
 	export type HorizontalAlignment = HorizontalAlignment.Left | HorizontalAlignment.Center | HorizontalAlignment.Right;
+	export namespace TextHorizontalAlignment {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextHorizontalAlignment#Left)
+		 */
+		export interface Left extends globalThis.EnumItem {}
+		export const Left: Left;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextHorizontalAlignment#Center)
+		 */
+		export interface Center extends globalThis.EnumItem {}
+		export const Center: Center;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextHorizontalAlignment#Right)
+		 */
+		export interface Right extends globalThis.EnumItem {}
+		export const Right: Right;
+	}
+	export type TextHorizontalAlignment =
+		| TextHorizontalAlignment.Left
+		| TextHorizontalAlignment.Center
+		| TextHorizontalAlignment.Right;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/HttpRequestMethod/)
 	 */
@@ -1500,6 +1561,24 @@ declare namespace Enum {
 		export const Exact: Exact;
 	}
 	export type MeshCollisionType = MeshCollisionType.Bounds | MeshCollisionType.Convex | MeshCollisionType.Exact;
+	export namespace CollisionType {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/CollisionType#Bounds)
+		 */
+		export interface Bounds extends globalThis.EnumItem {}
+		export const Bounds: Bounds;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/CollisionType#Convex)
+		 */
+		export interface Convex extends globalThis.EnumItem {}
+		export const Convex: Convex;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/CollisionType#Exact)
+		 */
+		export interface Exact extends globalThis.EnumItem {}
+		export const Exact: Exact;
+	}
+	export type CollisionType = CollisionType.Bounds | CollisionType.Convex | CollisionType.Exact;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ParticleEmissionShape/)
 	 */
@@ -1750,6 +1829,69 @@ declare namespace Enum {
 		| PartShape.Concave
 		| PartShape.Truss
 		| PartShape.Frame;
+	export namespace Shape {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Brick)
+		 */
+		export interface Brick extends globalThis.EnumItem {}
+		export const Brick: Brick;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Sphere)
+		 */
+		export interface Sphere extends globalThis.EnumItem {}
+		export const Sphere: Sphere;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Cylinder)
+		 */
+		export interface Cylinder extends globalThis.EnumItem {}
+		export const Cylinder: Cylinder;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Cone)
+		 */
+		export interface Cone extends globalThis.EnumItem {}
+		export const Cone: Cone;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Wedge)
+		 */
+		export interface Wedge extends globalThis.EnumItem {}
+		export const Wedge: Wedge;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Corner)
+		 */
+		export interface Corner extends globalThis.EnumItem {}
+		export const Corner: Corner;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Bevel)
+		 */
+		export interface Bevel extends globalThis.EnumItem {}
+		export const Bevel: Bevel;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Concave)
+		 */
+		export interface Concave extends globalThis.EnumItem {}
+		export const Concave: Concave;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Truss)
+		 */
+		export interface Truss extends globalThis.EnumItem {}
+		export const Truss: Truss;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Shape#Frame)
+		 */
+		export interface Frame extends globalThis.EnumItem {}
+		export const Frame: Frame;
+	}
+	export type Shape =
+		| Shape.Brick
+		| Shape.Sphere
+		| Shape.Cylinder
+		| Shape.Cone
+		| Shape.Wedge
+		| Shape.Corner
+		| Shape.Bevel
+		| Shape.Concave
+		| Shape.Truss
+		| Shape.Frame;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/SkyboxPreset/)
 	 */
@@ -1882,6 +2024,135 @@ declare namespace Enum {
 		| SkyboxPreset.Sunset3
 		| SkyboxPreset.Sunset4
 		| SkyboxPreset.Sunset5;
+	export namespace Skybox {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day1)
+		 */
+		export interface Day1 extends globalThis.EnumItem {}
+		export const Day1: Day1;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day2)
+		 */
+		export interface Day2 extends globalThis.EnumItem {}
+		export const Day2: Day2;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day3)
+		 */
+		export interface Day3 extends globalThis.EnumItem {}
+		export const Day3: Day3;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day4)
+		 */
+		export interface Day4 extends globalThis.EnumItem {}
+		export const Day4: Day4;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day5)
+		 */
+		export interface Day5 extends globalThis.EnumItem {}
+		export const Day5: Day5;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day6)
+		 */
+		export interface Day6 extends globalThis.EnumItem {}
+		export const Day6: Day6;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Day7)
+		 */
+		export interface Day7 extends globalThis.EnumItem {}
+		export const Day7: Day7;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning1)
+		 */
+		export interface Morning1 extends globalThis.EnumItem {}
+		export const Morning1: Morning1;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning2)
+		 */
+		export interface Morning2 extends globalThis.EnumItem {}
+		export const Morning2: Morning2;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning3)
+		 */
+		export interface Morning3 extends globalThis.EnumItem {}
+		export const Morning3: Morning3;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Morning4)
+		 */
+		export interface Morning4 extends globalThis.EnumItem {}
+		export const Morning4: Morning4;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night1)
+		 */
+		export interface Night1 extends globalThis.EnumItem {}
+		export const Night1: Night1;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night2)
+		 */
+		export interface Night2 extends globalThis.EnumItem {}
+		export const Night2: Night2;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night3)
+		 */
+		export interface Night3 extends globalThis.EnumItem {}
+		export const Night3: Night3;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night4)
+		 */
+		export interface Night4 extends globalThis.EnumItem {}
+		export const Night4: Night4;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Night5)
+		 */
+		export interface Night5 extends globalThis.EnumItem {}
+		export const Night5: Night5;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset1)
+		 */
+		export interface Sunset1 extends globalThis.EnumItem {}
+		export const Sunset1: Sunset1;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset2)
+		 */
+		export interface Sunset2 extends globalThis.EnumItem {}
+		export const Sunset2: Sunset2;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset3)
+		 */
+		export interface Sunset3 extends globalThis.EnumItem {}
+		export const Sunset3: Sunset3;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset4)
+		 */
+		export interface Sunset4 extends globalThis.EnumItem {}
+		export const Sunset4: Sunset4;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/Skybox#Sunset5)
+		 */
+		export interface Sunset5 extends globalThis.EnumItem {}
+		export const Sunset5: Sunset5;
+	}
+	export type Skybox =
+		| Skybox.Day1
+		| Skybox.Day2
+		| Skybox.Day3
+		| Skybox.Day4
+		| Skybox.Day5
+		| Skybox.Day6
+		| Skybox.Day7
+		| Skybox.Morning1
+		| Skybox.Morning2
+		| Skybox.Morning3
+		| Skybox.Morning4
+		| Skybox.Night1
+		| Skybox.Night2
+		| Skybox.Night3
+		| Skybox.Night4
+		| Skybox.Night5
+		| Skybox.Sunset1
+		| Skybox.Sunset2
+		| Skybox.Sunset3
+		| Skybox.Sunset4
+		| Skybox.Sunset5;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextFontPreset/)
 	 */
@@ -1966,6 +2237,87 @@ declare namespace Enum {
 		| TextFontPreset.Papyrus
 		| TextFontPreset.ComicSansMS
 		| TextFontPreset.JetBrainsMono;
+	export namespace BuiltInTextFontPreset {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#SourceSans)
+		 */
+		export interface SourceSans extends globalThis.EnumItem {}
+		export const SourceSans: SourceSans;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#PressStart2P)
+		 */
+		export interface PressStart2P extends globalThis.EnumItem {}
+		export const PressStart2P: PressStart2P;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Montserrat)
+		 */
+		export interface Montserrat extends globalThis.EnumItem {}
+		export const Montserrat: Montserrat;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#RobotoMono)
+		 */
+		export interface RobotoMono extends globalThis.EnumItem {}
+		export const RobotoMono: RobotoMono;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Rubik)
+		 */
+		export interface Rubik extends globalThis.EnumItem {}
+		export const Rubik: Rubik;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Poppins)
+		 */
+		export interface Poppins extends globalThis.EnumItem {}
+		export const Poppins: Poppins;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Domine)
+		 */
+		export interface Domine extends globalThis.EnumItem {}
+		export const Domine: Domine;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Fredoka)
+		 */
+		export interface Fredoka extends globalThis.EnumItem {}
+		export const Fredoka: Fredoka;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#ComicNeue)
+		 */
+		export interface ComicNeue extends globalThis.EnumItem {}
+		export const ComicNeue: ComicNeue;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Orbitron)
+		 */
+		export interface Orbitron extends globalThis.EnumItem {}
+		export const Orbitron: Orbitron;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#Papyrus)
+		 */
+		export interface Papyrus extends globalThis.EnumItem {}
+		export const Papyrus: Papyrus;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#ComicSansMS)
+		 */
+		export interface ComicSansMS extends globalThis.EnumItem {}
+		export const ComicSansMS: ComicSansMS;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/BuiltInTextFontPreset#JetBrainsMono)
+		 */
+		export interface JetBrainsMono extends globalThis.EnumItem {}
+		export const JetBrainsMono: JetBrainsMono;
+	}
+	export type BuiltInTextFontPreset =
+		| BuiltInTextFontPreset.SourceSans
+		| BuiltInTextFontPreset.PressStart2P
+		| BuiltInTextFontPreset.Montserrat
+		| BuiltInTextFontPreset.RobotoMono
+		| BuiltInTextFontPreset.Rubik
+		| BuiltInTextFontPreset.Poppins
+		| BuiltInTextFontPreset.Domine
+		| BuiltInTextFontPreset.Fredoka
+		| BuiltInTextFontPreset.ComicNeue
+		| BuiltInTextFontPreset.Orbitron
+		| BuiltInTextFontPreset.Papyrus
+		| BuiltInTextFontPreset.ComicSansMS
+		| BuiltInTextFontPreset.JetBrainsMono;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TweenDirection/)
 	 */
@@ -2112,6 +2464,24 @@ declare namespace Enum {
 		export const ClipAndDraw: ClipAndDraw;
 	}
 	export type UIMaskMode = UIMaskMode.Disabled | UIMaskMode.ClipOnly | UIMaskMode.ClipAndDraw;
+	export namespace MaskMode {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/MaskMode#Disabled)
+		 */
+		export interface Disabled extends globalThis.EnumItem {}
+		export const Disabled: Disabled;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/MaskMode#ClipOnly)
+		 */
+		export interface ClipOnly extends globalThis.EnumItem {}
+		export const ClipOnly: ClipOnly;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/MaskMode#ClipAndDraw)
+		 */
+		export interface ClipAndDraw extends globalThis.EnumItem {}
+		export const ClipAndDraw: ClipAndDraw;
+	}
+	export type MaskMode = MaskMode.Disabled | MaskMode.ClipOnly | MaskMode.ClipAndDraw;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/UIScrollMode/)
 	 */
@@ -2142,6 +2512,29 @@ declare namespace Enum {
 		| UIScrollMode.Auto
 		| UIScrollMode.AlwaysShow
 		| UIScrollMode.NeverShow;
+	export namespace ScrollMode {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#Disabled)
+		 */
+		export interface Disabled extends globalThis.EnumItem {}
+		export const Disabled: Disabled;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#Auto)
+		 */
+		export interface Auto extends globalThis.EnumItem {}
+		export const Auto: Auto;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#AlwaysShow)
+		 */
+		export interface AlwaysShow extends globalThis.EnumItem {}
+		export const AlwaysShow: AlwaysShow;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/ScrollMode#NeverShow)
+		 */
+		export interface NeverShow extends globalThis.EnumItem {}
+		export const NeverShow: NeverShow;
+	}
+	export type ScrollMode = ScrollMode.Disabled | ScrollMode.Auto | ScrollMode.AlwaysShow | ScrollMode.NeverShow;
 	/**
 	 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/VerticalAlignment/)
 	 */
@@ -2163,4 +2556,2097 @@ declare namespace Enum {
 		export const Bottom: Bottom;
 	}
 	export type VerticalAlignment = VerticalAlignment.Top | VerticalAlignment.Middle | VerticalAlignment.Bottom;
+	export namespace TextVerticalAlignment {
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextVerticalAlignment#Top)
+		 */
+		export interface Top extends globalThis.EnumItem {}
+		export const Top: Top;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextVerticalAlignment#Middle)
+		 */
+		export interface Middle extends globalThis.EnumItem {}
+		export const Middle: Middle;
+		/**
+		 * [Documentation](https://6cccc716.docs-v2-cib.pages.dev/api/enums/TextVerticalAlignment#Bottom)
+		 */
+		export interface Bottom extends globalThis.EnumItem {}
+		export const Bottom: Bottom;
+	}
+	export type TextVerticalAlignment =
+		| TextVerticalAlignment.Top
+		| TextVerticalAlignment.Middle
+		| TextVerticalAlignment.Bottom;
+}
+
+interface Accessory extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Accessory: unique symbol;
+	TargetAttachment: Enums["CharacterAttachment"];
+}
+
+interface AchievementsService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_AchievementsService: unique symbol;
+	UseAchievementSound: boolean;
+	NotifyAchievements: boolean;
+}
+
+interface AddonObject {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_AddonObject: unique symbol;
+	readonly Identifier: string;
+	AddonName: string;
+	AddonIcon: PTImageAsset;
+}
+
+interface AddonToolItem {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_AddonToolItem: unique symbol;
+}
+
+interface Animation extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Animation: unique symbol;
+}
+
+interface Animator extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Animator: unique symbol;
+}
+
+interface AssetsService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_AssetsService: unique symbol;
+}
+
+interface AudioAsset extends ResourceAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_AudioAsset: unique symbol;
+}
+
+interface BaseAsset extends NetworkedObject {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_BaseAsset: unique symbol;
+}
+
+interface BindableEvent extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_BindableEvent: unique symbol;
+}
+
+interface BodyPosition extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_BodyPosition: unique symbol;
+	TargetPosition: Vector3;
+	Force: number;
+	AcceptanceDistance: number;
+}
+
+interface BoolValue extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_BoolValue: unique symbol;
+	Value: boolean;
+}
+
+interface Bounds {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Bounds: unique symbol;
+	readonly Center: Vector3;
+	Size: Vector3;
+	readonly Extents: Vector3;
+	readonly Start: Vector3;
+	End: Vector3;
+	readonly Volume: number;
+}
+
+interface BuiltInAudioAsset extends AudioAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_BuiltInAudioAsset: unique symbol;
+	AudioPreset: Enums["BuiltInAudioPreset"];
+}
+
+interface BuiltInFontAsset extends FontAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_BuiltInFontAsset: unique symbol;
+	FontPreset: Enums["BuiltInTextFontPreset"];
+	FontWeight: Enums["FontWeight"];
+	FontStyle: Enums["FontStyle"];
+}
+
+interface Camera extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Camera: unique symbol;
+	Mode: Enums["CameraMode"];
+	FOV: number;
+	ClipThroughWalls: boolean;
+	MinDistance: number;
+	MaxDistance: number;
+	Distance: number;
+	ScrollSensitivity: number;
+	Orthographic: boolean;
+	FollowLerp: boolean;
+	LerpSpeed: number;
+	OrthographicSize: number;
+	PositionOffset: Vector3;
+	RotationOffset: Vector3;
+	readonly IsFirstPerson: boolean;
+	CanLock: boolean;
+	SensitivityMultiplier: number;
+	readonly Sensitivity: number;
+	HorizontalSpeed: number;
+	VerticalSpeed: number;
+	ScrollLerpSpeed: number;
+	CtrlLocked: boolean;
+	AlwaysLocked: boolean;
+	Target: Dynamic;
+}
+
+interface CaptureService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CaptureService: unique symbol;
+	readonly OnCooldown: boolean;
+	CanCapture: boolean;
+	DefaultCaptureOverlay: UIField;
+	SpectatorAttach: Dynamic;
+}
+
+interface CharacterModel extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CharacterModel: unique symbol;
+	Animator: Animator;
+}
+
+interface ChatService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ChatService: unique symbol;
+	ChatPredicate: any;
+}
+
+interface ClientScript extends Script {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ClientScript: unique symbol;
+}
+
+interface Color {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Color: unique symbol;
+	R: number;
+	G: number;
+	B: number;
+	A: number;
+}
+
+interface ColorAdjustModifier extends LightingModifier {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ColorAdjustModifier: unique symbol;
+	Brightness: number;
+	Contrast: number;
+	Saturation: number;
+	TintColor: Color;
+}
+
+interface ColorSeries {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ColorSeries: unique symbol;
+	readonly PointCount: number;
+}
+
+interface ColorValue extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ColorValue: unique symbol;
+	Value: Color;
+}
+
+interface CoreUIService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CoreUIService: unique symbol;
+	UseUserCard: boolean;
+	UseChat: boolean;
+	UseHealthBar: boolean;
+	UseLeaderboard: boolean;
+	UseHotbar: boolean;
+	UseBackpack: boolean;
+	UseMenuButton: boolean;
+	UseEmoteWheel: boolean;
+	CanRespawn: boolean;
+}
+
+interface CreatorAddons extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorAddons: unique symbol;
+}
+
+interface CreatorContextService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorContextService: unique symbol;
+}
+
+interface CreatorGUI extends PlayerGUI {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorGUI: unique symbol;
+}
+
+interface CreatorHistory extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorHistory: unique symbol;
+}
+
+interface CreatorInterface {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorInterface: unique symbol;
+	readonly ToolMode: Enums["ToolMode"];
+	readonly TargetPartColor: Color;
+	readonly TargetPartMaterial: Enums["PartMaterial"];
+	readonly MoveSnapEnabled: boolean;
+	readonly MoveSnapping: number;
+	readonly UserMoveSnapping: number;
+	readonly RotateSnapEnabled: boolean;
+	readonly RotateSnapping: number;
+	readonly UserRotateSnapping: number;
+}
+
+interface CreatorSelections extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorSelections: unique symbol;
+}
+
+interface CreatorService {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_CreatorService: unique symbol;
+	readonly Interface: CreatorInterface;
+	readonly CurrentGame: Game;
+	readonly LocalTestActive: boolean;
+}
+
+interface Datastore {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Datastore: unique symbol;
+	readonly Key: string;
+}
+
+interface DatastoreService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_DatastoreService: unique symbol;
+}
+
+interface Decal extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Decal: unique symbol;
+	Image: ImageAsset;
+	Energy: number;
+	Color: Color;
+}
+
+interface Dynamic extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Dynamic: unique symbol;
+	Position: Vector3;
+	Rotation: Vector3;
+	Size: Vector3;
+	LocalPosition: Vector3;
+	LocalRotation: Vector3;
+	LocalSize: Vector3;
+	Quaternion: Quaternion;
+	LocalQuaternion: Quaternion;
+	Locked: boolean;
+	readonly Forward: Vector3;
+	readonly Right: Vector3;
+	readonly Up: Vector3;
+}
+
+interface Entity extends Physical {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Entity: unique symbol;
+	Color: Color;
+	CastShadows: boolean;
+	IsSpawn: boolean;
+	UseGravity: boolean;
+	Mass: number;
+	Friction: number;
+	Drag: number;
+	AngularDrag: number;
+	Bounciness: number;
+}
+
+interface Environment extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Environment: unique symbol;
+	CurrentCamera: Camera;
+	Gravity: Vector3;
+	PartDestroyHeight: number;
+	AutoGenerateNavMesh: boolean;
+}
+
+interface Explosion extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Explosion: unique symbol;
+	Radius: number;
+	Force: number;
+	AffectAnchored: boolean;
+	Damage: number;
+	AffectPredicate: any;
+}
+
+interface FileLinkAsset extends BaseAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_FileLinkAsset: unique symbol;
+	LinkedID: string;
+}
+
+interface FilterService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_FilterService: unique symbol;
+}
+
+interface Folder extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Folder: unique symbol;
+}
+
+interface FontAsset extends ResourceAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_FontAsset: unique symbol;
+}
+
+interface Game extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Game: unique symbol;
+	readonly IsLocalTest: boolean;
+	readonly GameID: number;
+	readonly ServerID: number;
+	readonly UpTime: number;
+	readonly ServerTime: number;
+	readonly InstanceCount: number;
+}
+
+interface Grabbable extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Grabbable: unique symbol;
+	Force: number;
+	MaxRange: number;
+	UseDragForce: boolean;
+	PermissionMode: Enums["GrabbablePermissionMode"];
+	readonly Dragger: Player;
+	PermissionPredicate: any;
+}
+
+interface GradientImageAsset extends ImageAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_GradientImageAsset: unique symbol;
+	Series: ColorSeries;
+	Width: number;
+	Height: number;
+	Fill: Enums["GradientImageFill"];
+	FillFrom: Vector2;
+	FillTo: Vector2;
+}
+
+interface GradientSky extends Sky {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_GradientSky: unique symbol;
+	SunDiscColor: Color;
+	SunDiscMultiplier: number;
+	SunDiscExponent: number;
+	SunHaloColor: Color;
+	SunHaloExponent: number;
+	SunHaloContribution: number;
+	HorizonLineColor: Color;
+	HorizonLineExponent: number;
+	HorizonLineContribution: number;
+	SkyGradientTop: Color;
+	SkyGradientBottom: Color;
+	SkyGradientExponent: number;
+}
+
+interface GUI extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_GUI: unique symbol;
+	Visible: boolean;
+	ZIndex: number;
+}
+
+interface GUI3D extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_GUI3D: unique symbol;
+	CanvasSize: Vector2;
+	Shaded: boolean;
+	FaceCamera: boolean;
+	Transparent: boolean;
+}
+
+interface Hidden extends HiddenBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Hidden: unique symbol;
+}
+
+interface HiddenBase extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_HiddenBase: unique symbol;
+}
+
+interface HttpRequestData {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_HttpRequestData: unique symbol;
+	URL: string;
+	Method: Enums["HttpRequestMethod"];
+	Body: string;
+	Headers: any;
+}
+
+interface HttpResponseData {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_HttpResponseData: unique symbol;
+	readonly Success: boolean;
+	readonly StatusCode: number;
+	readonly Headers: any;
+	readonly Body: string;
+	readonly Buffer: any;
+}
+
+interface HttpService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_HttpService: unique symbol;
+}
+
+interface Image3D extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Image3D: unique symbol;
+	Image: ImageAsset;
+	TextureScale: Vector2;
+	TextureOffset: Vector2;
+	Color: Color;
+	CastShadows: boolean;
+	Shaded: boolean;
+	FaceCamera: boolean;
+}
+
+interface ImageAsset extends ResourceAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ImageAsset: unique symbol;
+}
+
+interface ImageSky extends Sky {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ImageSky: unique symbol;
+	TopImage: ImageAsset;
+	BottomImage: ImageAsset;
+	LeftImage: ImageAsset;
+	RightImage: ImageAsset;
+	FrontImage: ImageAsset;
+	BackImage: ImageAsset;
+}
+
+interface InputAction {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputAction: unique symbol;
+}
+
+interface InputActionAxis extends InputAction {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputActionAxis: unique symbol;
+	Negative: InputButtonCollection;
+	Positive: InputButtonCollection;
+	readonly Value: number;
+}
+
+interface InputActionButton extends InputAction {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputActionButton: unique symbol;
+	readonly Buttons: InputButtonCollection;
+	IsPressed: boolean;
+	Weight: number;
+}
+
+interface InputActionVector2 extends InputAction {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputActionVector2: unique symbol;
+	Up: InputButtonCollection;
+	Down: InputButtonCollection;
+	Left: InputButtonCollection;
+	Right: InputButtonCollection;
+	readonly Value: Vector2;
+}
+
+interface InputButton {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputButton: unique symbol;
+	KeyCode: Enums["KeyCode"];
+}
+
+interface InputButtonCollection {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputButtonCollection: unique symbol;
+}
+
+interface InputService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InputService: unique symbol;
+	readonly IsWindowFocused: boolean;
+	readonly IsTouchscreen: boolean;
+	readonly IsGameFocused: boolean;
+	readonly IsInputFocused: boolean;
+	readonly IsGamepadConnected: boolean;
+	readonly IsMenuOpened: boolean;
+	CursorLocked: boolean;
+	CursorVisible: boolean;
+	readonly MousePosition: Vector2;
+	readonly ScreenWidth: number;
+	readonly ScreenHeight: number;
+}
+
+interface InsertService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InsertService: unique symbol;
+}
+
+interface Instance extends NetworkedObject {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Instance: unique symbol;
+	Parent: Instance;
+	EditableChildren: boolean;
+	Tags: Array<string>;
+	Archivable: boolean;
+}
+
+interface InstanceValue extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_InstanceValue: unique symbol;
+	Value: Instance;
+}
+
+interface IntValue extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_IntValue: unique symbol;
+	Value: number;
+}
+
+interface Inventory extends HiddenBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Inventory: unique symbol;
+}
+
+interface IOService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_IOService: unique symbol;
+}
+
+interface Light extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Light: unique symbol;
+	Color: Color;
+	Brightness: number;
+	Specular: number;
+	Shadows: boolean;
+}
+
+interface Lighting extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Lighting: unique symbol;
+	Skybox: Enums["Skybox"];
+	AmbientSource: Enums["AmbientSource"];
+	AmbientColor: Color;
+	FogEnabled: boolean;
+	FogColor: Color;
+	FogStartDistance: number;
+	FogEndDistance: number;
+}
+
+interface LightingModifier extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_LightingModifier: unique symbol;
+}
+
+interface Marker3D extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Marker3D: unique symbol;
+	Length: number;
+	AppearOnTop: boolean;
+}
+
+interface Mesh extends Entity {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Mesh: unique symbol;
+	Asset: MeshAsset;
+	IncludeOffset: boolean;
+	CollisionType: Enums["CollisionType"];
+	PlayAnimationOnStart: boolean;
+	UsePartColor: boolean;
+	Color: Color;
+	CastShadows: boolean;
+	readonly CurrentAnimation: string;
+	readonly IsAnimationPlaying: boolean;
+	readonly Loading: boolean;
+}
+
+interface MeshAnimationInfo {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_MeshAnimationInfo: unique symbol;
+	Name: string;
+	Length: number;
+	IsPlaying: boolean;
+}
+
+interface MeshAsset extends ResourceAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_MeshAsset: unique symbol;
+}
+
+interface MissingInstance extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_MissingInstance: unique symbol;
+}
+
+interface Model extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Model: unique symbol;
+}
+
+interface ModuleScript extends Script {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ModuleScript: unique symbol;
+}
+
+interface NetMessage {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NetMessage: unique symbol;
+}
+
+interface NetworkedObject {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NetworkedObject: unique symbol;
+	Name: string;
+	readonly ClassName: string;
+	readonly Shared: ScriptSharedTable;
+	readonly NetworkedObjectID: string;
+	readonly ObjectID: string;
+	readonly ExistInNetwork: boolean;
+}
+
+interface NetworkEvent extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NetworkEvent: unique symbol;
+	Reliable: boolean;
+}
+
+interface NewServerRequestData {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NewServerRequestData: unique symbol;
+	PlacePath: string;
+	MaxPlayers: number;
+}
+
+interface NPC extends Physical {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NPC: unique symbol;
+	SeatOffset: Vector3;
+	Health: number;
+	MaxHealth: number;
+	JumpPower: number;
+	WalkSpeed: number;
+	UseNametag: boolean;
+	NametagOffset: Vector3;
+	NametagVisibleRadius: number;
+	DisplayName: string;
+	JumpSound: Sound;
+	readonly IsSitting: boolean;
+	readonly IsDead: boolean;
+	readonly HoldingTool: Tool;
+	readonly SittingIn: Seat;
+	readonly Character: CharacterModel;
+	MoveTarget: Dynamic;
+	readonly OnGround: boolean;
+	readonly OnCeiling: boolean;
+	readonly NavDestinationDistance: number;
+	readonly NavDestinationReached: boolean;
+	readonly NavDestinationValid: boolean;
+}
+
+interface NumberRange {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NumberRange: unique symbol;
+	Min: number;
+	Max: number;
+}
+
+interface NumberValue extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_NumberValue: unique symbol;
+	Value: number;
+}
+
+interface Part extends Entity {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Part: unique symbol;
+	Shape: Enums["Shape"];
+	Material: Enums["PartMaterial"];
+	Color: Color;
+	CastShadows: boolean;
+}
+
+interface Particles extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Particles: unique symbol;
+	Playing: boolean;
+	Image: ImageAsset;
+	Color: ColorSeries;
+	Lifetime: NumberRange;
+	Amount: number;
+	Gravity: Vector3;
+	VelocityDirection: Vector3;
+	InitialVelocity: NumberRange;
+	Spread: number;
+	Flatness: number;
+	Scale: NumberRange;
+	HueVariation: NumberRange;
+	BlendMode: Enums["BlendMode"];
+	Shaded: boolean;
+	EmissionShape: Enums["ParticleEmissionShape"];
+	EmissionShapeScale: Vector3;
+	SimulationSpace: Enums["ParticleSimulationSpace"];
+}
+
+interface Physical extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Physical: unique symbol;
+	Anchored: boolean;
+	CanCollide: boolean;
+	Velocity: Vector3;
+	AngularVelocity: Vector3;
+}
+
+interface PhysicalModel extends Physical {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PhysicalModel: unique symbol;
+}
+
+interface PlacesService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PlacesService: unique symbol;
+}
+
+interface Player extends NPC {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Player: unique symbol;
+	readonly UserID: number;
+	CanMove: boolean;
+	SprintSpeed: number;
+	Stamina: number;
+	MaxStamina: number;
+	UseStamina: boolean;
+	StaminaRegen: number;
+	StaminaBurn: number;
+	RespawnTime: number;
+	UseHeadTurning: boolean;
+	UseBubbleChat: boolean;
+	AutoLoadAppearance: boolean;
+	readonly NetworkPing: number;
+	readonly IsAdmin: boolean;
+	readonly IsCreator: boolean;
+	ChatColor: Color;
+	readonly IsLocal: boolean;
+	readonly IsClimbing: boolean;
+	readonly ClimbingTruss: Truss;
+	readonly UserPlatform: Enums["ClientPlatform"];
+	readonly Inventory: Inventory;
+}
+
+interface PlayerDefaults extends HiddenBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PlayerDefaults: unique symbol;
+	MaxHealth: number;
+	WalkSpeed: number;
+	SprintSpeed: number;
+	JumpPower: number;
+	RespawnTime: number;
+	ChatColor: Color;
+	CanMove: boolean;
+	StaminaBurn: number;
+	UseStamina: boolean;
+	StaminaEnabled: boolean;
+	Stamina: number;
+	MaxStamina: number;
+	StaminaRegen: number;
+	UseHeadTurning: boolean;
+	UseBubbleChat: boolean;
+	AutoLoadAppearance: boolean;
+}
+
+interface PlayerGUI extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PlayerGUI: unique symbol;
+}
+
+interface Players extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Players: unique symbol;
+	readonly LocalPlayer: Player;
+	PlayerCollisionEnabled: boolean;
+	readonly PlayersCount: number;
+}
+
+interface PointLight extends Light {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PointLight: unique symbol;
+	Range: number;
+}
+
+interface PolytorianModel extends CharacterModel {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PolytorianModel: unique symbol;
+	HeadColor: Color;
+	TorsoColor: Color;
+	LeftArmColor: Color;
+	RightArmColor: Color;
+	LeftLegColor: Color;
+	RightLegColor: Color;
+	FaceImage: ImageAsset;
+	ShirtImage: ImageAsset;
+	PantsImage: ImageAsset;
+	TorsoMesh: MeshAsset;
+	readonly Ragdolling: boolean;
+	readonly RagdollPosition: Vector3;
+	readonly RagdollRotation: Vector3;
+}
+
+interface PreferencesService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PreferencesService: unique symbol;
+	readonly UsePhotoMode: boolean;
+	readonly UsePostProcessing: boolean;
+}
+
+interface PresenceService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PresenceService: unique symbol;
+	State: string;
+	CoverImage: PTImageAsset;
+}
+
+interface ProceduralSky extends Sky {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ProceduralSky: unique symbol;
+	SunSize: number;
+	SkyTint: Color;
+	HorizonColor: Color;
+	GroundColor: Color;
+	Exposure: number;
+}
+
+interface PTAudioAsset extends AudioAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PTAudioAsset: unique symbol;
+	AudioID: number;
+}
+
+interface PTCallback {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PTCallback: unique symbol;
+}
+
+interface PTFunction {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PTFunction: unique symbol;
+}
+
+interface PTImageAsset extends ImageAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PTImageAsset: unique symbol;
+	ImageID: number;
+	ImageType: Enums["ImageType"];
+}
+
+interface PTMeshAsset extends MeshAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PTMeshAsset: unique symbol;
+	AssetID: number;
+}
+
+interface PTSignal {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PTSignal: unique symbol;
+}
+
+interface PurchasesService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_PurchasesService: unique symbol;
+}
+
+interface Quaternion {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Quaternion: unique symbol;
+	X: number;
+	Y: number;
+	Z: number;
+	W: number;
+	readonly Identity: Quaternion;
+}
+
+interface RayResult {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_RayResult: unique symbol;
+	Origin: Vector3;
+	Direction: Vector3;
+	Position: Vector3;
+	Normal: Vector3;
+	Distance: number;
+	Instance: Instance;
+}
+
+interface ResourceAsset extends BaseAsset {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ResourceAsset: unique symbol;
+}
+
+interface Script extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Script: unique symbol;
+	Source: string;
+	IsEnabled: boolean;
+	LinkedScript: FileLinkAsset;
+	Compatibility: boolean;
+}
+
+interface ScriptService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ScriptService: unique symbol;
+}
+
+interface ScriptSharedTable {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ScriptSharedTable: unique symbol;
+}
+
+interface Seat extends Part {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Seat: unique symbol;
+	Occupant: NPC;
+	CanNPCSit: boolean;
+}
+
+interface ServerHidden extends HiddenBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ServerHidden: unique symbol;
+}
+
+interface ServerScript extends Script {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ServerScript: unique symbol;
+}
+
+interface Sky extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Sky: unique symbol;
+}
+
+interface SocialService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_SocialService: unique symbol;
+}
+
+interface Sound extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Sound: unique symbol;
+	Audio: AudioAsset;
+	Volume: number;
+	Pitch: number;
+	Autoplay: boolean;
+	Loop: boolean;
+	PlayInWorld: boolean;
+	Paused: boolean;
+	MaxDistance: number;
+	Time: number;
+	readonly Playing: boolean;
+	readonly Loading: boolean;
+	readonly Length: number;
+}
+
+interface SpotLight extends Light {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_SpotLight: unique symbol;
+	Range: number;
+	Angle: number;
+}
+
+interface StringValue extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_StringValue: unique symbol;
+	Value: string;
+}
+
+interface SunLight extends Light {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_SunLight: unique symbol;
+}
+
+interface Temporary extends ServerHidden {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Temporary: unique symbol;
+}
+
+interface Text3D extends Dynamic {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Text3D: unique symbol;
+	Text: string;
+	FontSize: number;
+	Color: Color;
+	OutlineWidth: number;
+	OutlineColor: Color;
+	FaceCamera: boolean;
+	HorizontalAlignment: Enums["TextHorizontalAlignment"];
+	VerticalAlignment: Enums["TextVerticalAlignment"];
+	FontAsset: FontAsset;
+	UseRichText: boolean;
+}
+
+interface Tool extends PhysicalModel {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Tool: unique symbol;
+	Droppable: boolean;
+	IconImage: ImageAsset;
+	Holder: NPC;
+}
+
+interface Truss extends Part {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Truss: unique symbol;
+	ClimbSpeed: number;
+}
+
+interface TweenObject {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_TweenObject: unique symbol;
+	Looped: boolean;
+	Parallel: boolean;
+	SpeedScale: number;
+	readonly IsRunning: boolean;
+	readonly ElapsedTime: number;
+}
+
+interface TweenService extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_TweenService: unique symbol;
+}
+
+interface UIButton extends UILabel {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIButton: unique symbol;
+}
+
+interface UIField extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIField: unique symbol;
+	PositionOffset: Vector2;
+	PositionRelative: Vector2;
+	Rotation: number;
+	SizeOffset: Vector2;
+	SizeRelative: Vector2;
+	ClipDescendants: boolean;
+	PivotPoint: Vector2;
+	Scale: Vector2;
+	Visible: boolean;
+	MaskMode: Enums["MaskMode"];
+	IgnoreMouse: boolean;
+	ZIndex: number;
+	readonly AbsolutePosition: Vector2;
+	readonly AbsoluteSize: Vector2;
+	readonly IsVisibleInTree: boolean;
+}
+
+interface UIHorizontalLayout extends UIHVLayout {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIHorizontalLayout: unique symbol;
+}
+
+interface UIHVLayout extends UIField {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIHVLayout: unique symbol;
+	Spacing: number;
+	ChildAlignment: Enums["UILayoutAlignment"];
+}
+
+interface UIImage extends UIField {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIImage: unique symbol;
+	Image: ImageAsset;
+	Color: Color;
+	StretchMode: Enums["ImageStretchMode"];
+	readonly Loading: boolean;
+}
+
+interface UILabel extends UIView {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UILabel: unique symbol;
+	Text: string;
+	TextColor: Color;
+	OutlineWidth: number;
+	OutlineColor: Color;
+	HorizontalAlignment: Enums["TextHorizontalAlignment"];
+	VerticalAlignment: Enums["TextVerticalAlignment"];
+	FontSize: number;
+	UseRichText: boolean;
+	FontAsset: FontAsset;
+}
+
+interface UIScrollView extends UIField {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIScrollView: unique symbol;
+	HorizontalScrollMode: Enums["ScrollMode"];
+	VerticalScrollMode: Enums["ScrollMode"];
+}
+
+interface UITextInput extends UIView {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UITextInput: unique symbol;
+	Text: string;
+	TextColor: Color;
+	JustifyText: Enums["TextHorizontalAlignment"];
+	FontSize: number;
+	IsMultiline: boolean;
+	Placeholder: string;
+	PlaceholderColor: Color;
+	ReadOnlyColor: Color;
+	IsReadOnly: boolean;
+	FontAsset: FontAsset;
+}
+
+interface UIVerticalLayout extends UIHVLayout {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIVerticalLayout: unique symbol;
+}
+
+interface UIView extends UIField {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIView: unique symbol;
+	BorderColor: Color;
+	Color: Color;
+	BorderWidth: number;
+	CornerRadius: number;
+}
+
+interface UIViewport extends UIField {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_UIViewport: unique symbol;
+}
+
+interface ValueBase extends Instance {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_ValueBase: unique symbol;
+}
+
+interface Vector2 {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Vector2: unique symbol;
+	X: number;
+	Y: number;
+	readonly Down: Vector2;
+	readonly Left: Vector2;
+	readonly One: Vector2;
+	readonly Zero: Vector2;
+	readonly Right: Vector2;
+	readonly Up: Vector2;
+	readonly Magnitude: number;
+	readonly Normalized: Vector2;
+	readonly SqrMagnitude: number;
+}
+
+interface Vector2Value extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Vector2Value: unique symbol;
+	Value: Vector2;
+}
+
+interface Vector3 {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Vector3: unique symbol;
+	X: number;
+	Y: number;
+	Z: number;
+	readonly Forward: Vector3;
+	readonly Back: Vector3;
+	readonly Down: Vector3;
+	readonly Left: Vector3;
+	readonly One: Vector3;
+	readonly Zero: Vector3;
+	readonly Right: Vector3;
+	readonly Up: Vector3;
+	readonly Magnitude: number;
+	readonly Normalized: Vector3;
+	readonly SqrMagnitude: number;
+}
+
+interface Vector3Value extends ValueBase {
+	/**
+	 * **DO NOT USE!**
+	 *
+	 * This field exists to force TypeScript to recognize this as a nominal type
+	 * @hidden
+	 * @deprecated
+	 */
+	readonly _nominal_Vector3Value: unique symbol;
+	Value: Vector3;
 }

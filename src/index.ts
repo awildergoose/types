@@ -2,8 +2,8 @@ import { readdir } from "node:fs/promises";
 
 import { YAML } from "bun";
 
-import { type IR, IREnumSchema, IRSchema, IRTypeSchema } from "./ir";
 import { CodeEmitter } from "./code_emitter";
+import { type IR, IREnumSchema, IRSchema, IRTypeSchema } from "./ir";
 
 const ROOT = `${__dirname}/../docs-site/yaml`;
 const ENUMS = `${ROOT}/enums`;
@@ -32,7 +32,8 @@ console.log(`Parsed IR in ${((Bun.nanoseconds() - start) / 1e9).toFixed(3)}s!`);
 start = Bun.nanoseconds();
 
 const emitter = new CodeEmitter();
-emitter.emit(`// Auto-generated typedefs for polytoria!
+emitter.emit(`/// <reference path="lua.d.ts" />
+// Auto-generated typedefs for polytoria!
 type Enums = typeof Enum;
 
 interface EnumItem {}

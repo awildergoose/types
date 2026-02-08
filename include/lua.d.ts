@@ -1,5 +1,4 @@
 /// <reference no-default-lib="true"/>
-/// <reference path="generated/None.d.ts" />
 /// <reference types="@rbxts/compiler-types" />
 
 // LUA API
@@ -18,7 +17,7 @@ declare function collectgarbage(option: "count"): number;
 declare function error(message?: unknown, level?: number): never;
 
 /** Returns the current environment in use by the function. If provided with a function, the environment of the function will be returned as an array. If provided with an integer, getfenv will provide the environment of the function at the provided stack level: Level 1 is the function calling getfenv. If stack is 0, getfenv returns the global environment of the current script. When using getfenv to get the current environment of a script, it will return the same table every time within the specific thread. */
-declare function getfenv(stack: number): { script: LuaSourceContainer };
+declare function getfenv(stack: number): { script: Script };
 
 /** Returns the metatable of the specified object if it has one, otherwise returns nil. If the object does have a metatable, but the metatable has a __metatable field set, the value of __metatable will be returned instead. */
 declare function getmetatable(object: object): unknown;
